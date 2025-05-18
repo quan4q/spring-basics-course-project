@@ -30,6 +30,7 @@ public class App {
         
         Client client = ctx.getBean(Client.class);
         System.out.println("Client says: " + client.getGreeting());
+        System.out.println("His city is: " + client.getCity());
         
         app.logEvents(ctx);
         
@@ -48,6 +49,12 @@ public class App {
         
         event = ctx.getBean(Event.class);
         logEvent(EventType.ERROR, event, "Some event for 2");
+
+        event = ctx.getBean(Event.class);
+        logEvent(EventType.DEBUG, event, "Some DEBUG event");
+
+        event = ctx.getBean(Event.class);
+        logEvent(EventType.WARNING, event, "Some WARNING event");
         
         event = ctx.getBean(Event.class);
         logEvent(null, event, "Some event for 3");

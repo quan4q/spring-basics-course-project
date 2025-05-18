@@ -45,7 +45,7 @@ public class DBLogger extends AbstractLogger {
 
     private void createDBSchema() {
         try {
-            jdbcTemplate.update("CREATE SCHEMA " + schema);
+            jdbcTemplate.update("CREATE SCHEMA IF NOT EXISTS " + schema);
         } catch (DataAccessException e) {
             Throwable causeException = e.getCause();
             if (causeException instanceof SQLException) {
@@ -63,7 +63,7 @@ public class DBLogger extends AbstractLogger {
 
     private void createTableIfNotExists() {
         try {
-            jdbcTemplate.update("CREATE TABLE t_event (" + "id INT NOT NULL PRIMARY KEY," + "date TIMESTAMP,"
+            jdbcTemplate.update("CREATE TABLE IF NOT EXISTS t_event (" + "id INT NOT NULL PRIMARY KEY," + "date TIMESTAMP,"
                     + "msg VARCHAR(255)" + ")");
 
             System.out.println("Created table t_event");

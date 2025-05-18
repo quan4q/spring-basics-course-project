@@ -2,7 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xmlns:util="http://www.springframework.org/schema/util"
-	xmlns:p="http://www.springframework.org/schema/p" 
+	xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:c="http://www.springframework.org/schema/c"
 	xsi:schemaLocation="
  		http://www.springframework.org/schema/beans
@@ -15,7 +15,7 @@
 
 	<bean id="fileEventLogger" class="com.yet.spring.core.loggers.FileEventLogger"
 		init-method="init" p:name="File logger">
-		<constructor-arg value="target/events_log.txt" />
+		<constructor-arg value="target/mylog.txt" />
 	</bean>
 
 	<bean id="cacheFileEventLogger" class="com.yet.spring.core.loggers.CacheFileEventLogger"
